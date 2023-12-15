@@ -57,4 +57,21 @@ describe("Function test", function () {
         expect(callMe(100)).toBe(1000);
         expect(callMe("Dimas")).toBe("DIMAS");
     });
+    // todo: function as parameter
+    it("should be support typescript for function as parameter", function () {
+        function sayHello(name, filter) {
+            return `Hello ${filter(name)}`;
+        }
+        function toUpper(name) {
+            return name.toUpperCase();
+        }
+        // return nilai biasa
+        expect(sayHello("Dimas", toUpper)).toBe("Hello DIMAS");
+        // anonymous function
+        expect(sayHello("Dimas", function (name) {
+            return name.toUpperCase();
+        })).toBe("Hello DIMAS");
+        // arrow function
+        expect(sayHello("Dimas", (name) => name.toUpperCase())).toBe("Hello DIMAS");
+    });
 });

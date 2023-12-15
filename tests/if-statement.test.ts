@@ -1,5 +1,3 @@
-// todo: if statement typescript
-
 describe("if statement typescript", function () {
   it("should support typescript for if statement", () => {
     const examValue = 90;
